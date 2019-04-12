@@ -15,6 +15,29 @@ function postComment(){
 
 }
 
+
+
 function createPost(){
+
+  let title = document.getElementById('postTitle').value;
+  let body = document.getElementById('postBody').value;
+  let author = document.getElementById('postAuthor').value;
+
+  let pageTemplate = document.getElementById('page-template').innerHTML;
+  let pageDiv = document.getElementById('page');
+  pageDiv.innerHTML = pageTemplate;
+
+  // add post to page
+  let postTemplate = document.getElementById('post-template').innerHTML;
+  let templateFn = _.template(postTemplate);
+  let postsDiv = document.getElementById('post');
+
+  let postTemplateHTML = templateFn({ title: title, body: body, author: author });
+  postsDiv.innerHTML += postTemplateHTML;
+
+  // add comments section
+  let commentsTemplate = document.getElementById('comments-template').innerHTML;
+  let commentsDiv = document.getElementById('sidebar');
+  commentsDiv.innerHTML = commentsTemplate;
 
 }

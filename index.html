@@ -5,20 +5,17 @@
   </head>
   <body>
     <main>
-        <form  id="post-form" onsubmit="createPost();return false;">
-          Title: <input type="text" id="postTitle"><br>
-          Body: <input type="textarea" id="postBody"><br>
-          Author: <input type="textarea" id="postAuthor"><br>
-          <input type="submit">
-        </form>
-
-        <div id="sidebar">
-        </div>
-
-        <div id="post">
+        <div id="page">
+          <form  id="post-form" onsubmit="createPost();return false;">
+            Title: <input type="text" id="postTitle"><br>
+            Body: <input type="textarea" id="postBody"><br>
+            Author: <input type="textarea" id="postAuthor"><br>
+            <input type="submit">
+          </form>
         </div>
 
     </main>
+
     <script src="node_modules/lodash/lodash.min.js"></script>
     <script src="index.js"></script>
     <!-- Open this file and call `mocha.run()` in console to run tests -->
@@ -51,14 +48,15 @@
     </script>
 
     <script id="comment-template" type="text/x-lodash-template">
-      <footer></footer>
+      <%=comment%>
+      <footer><%=commenter%></footer>
     </script>
 
 
     <script id="post-template" type="text/x-lodash-template">
-      <header></header>
-      <article></article>
-      <footer></footer>
+      <header><%=title%></header>
+      <article><%=body%></article>
+      <footer><%=author%></footer>
     </script>
 
     <script src="test/index-test.js"></script>
