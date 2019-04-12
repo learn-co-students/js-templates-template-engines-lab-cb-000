@@ -8,7 +8,7 @@ function postComment(){
   let commentsDiv = document.getElementById('comments');
 
   //execute template function with JSON object for the interpolated values
-  let templateHTML += templateFn({ comment: comment, commenter: commenter });
+  let templateHTML = templateFn({ comment: comment, commenter: commenter });
 
   //append rather than replace!
   commentsDiv.innerHTML += templateHTML;
@@ -25,7 +25,7 @@ function createPost(){
 
   let pageTemplate = document.getElementById('page-template').innerHTML;
   let pageDiv = document.getElementById('page');
-  pageDiv.innerHTML = pageTemplate;
+  pageDiv.innerHTML += pageTemplate;
 
   // add post to page
   let postTemplate = document.getElementById('post-template').innerHTML;
@@ -38,6 +38,6 @@ function createPost(){
   // add comments section
   let commentsTemplate = document.getElementById('comments-template').innerHTML;
   let commentsDiv = document.getElementById('sidebar');
-  commentsDiv.innerHTML = commentsTemplate;
+  commentsDiv.innerHTML += commentsTemplate;
 
 }
