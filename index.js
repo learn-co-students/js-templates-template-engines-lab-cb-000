@@ -8,7 +8,7 @@ function postComment(){
   let commentsDiv = document.getElementById('comments');
 
   //execute template function with JSON object for the interpolated values
-  let templateHTML = templateFn({ comment: comment, commenter: commenter });
+  let templateHTML += templateFn({ comment: comment, commenter: commenter });
 
   //append rather than replace!
   commentsDiv.innerHTML += templateHTML;
