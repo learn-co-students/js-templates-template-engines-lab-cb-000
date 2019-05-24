@@ -7,33 +7,40 @@
     <main>
 
       <script id="page-template" type="text/x-lodash-template">
-        <aside id="sidebar"><%= sidebar %></aside>
+        <div id="sidebar"><%= sidebar %></div>
         <div id="post"><%= post %></div>
       </script>  <!--end page-template -->
 
       <script id="post-template" type="text/x-lodash-template">
         <article>
-          <header><%= header %></header>
-          <p><%= content %></p>
-          <footer><%= footer %></footer>
+          <header><%= postHeader %></header>
+          <p><%= postContent %></p>
+          <footer><%= postFooter %></footer>
         </article>
       </script>  <!--end post-template -->
 
       <script id="comments-template" type="text/x-lodash-template">
-        <article>
-          <header><%= header %></header>
-          <p><%= content %></p>
-          <footer><%= footer %></footer>
-        </article>
+        <form onsubmit="postComment();" id="comments-form">
+          Name: <input type="text" id="commenterName"><br>
+          Comment: <input type="textarea" id="commentText"><br>
+          <input type="submit">
+        </form>
+        <div id="comments">
+        </div>
       </script>  <!--end comments-template -->
 
       <script id="comment-template" type="text/x-lodash-template">
-        <article>
-          <header><%= header %></header>
-          <p><%= content %></p>
-          <footer><%= footer %></footer>
-        </article>
+        <div id="comment">
+          <p><%= comment %></p>
+          <footer><%= commenter %></footer>
+        </div>
       </script>  <!--end comment-template -->
+      <form id="post-form" onsubmit="createPost();">
+        Title: <input type="text" id="postHeader" name="postHeader" value=""><br>
+        Content: <input type="textarea" name="postContent" id="postContent"><br>
+        Author: <input type="text" name="postFooter" id="postFooter"><br>
+        <input type="submit" name="" value="Create Post">
+      </form>
 
     </main>
     <script src="node_modules/lodash/lodash.min.js"></script>
