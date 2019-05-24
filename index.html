@@ -5,6 +5,36 @@
   </head>
   <body>
     <main>
+
+      <script id="page-template" type="text/x-lodash-template">
+        <aside id="sidebar"><%= sidebar %></aside>
+        <div id="post"><%= post %></div>
+      </script>  <!--end page-template -->
+
+      <script id="post-template" type="text/x-lodash-template">
+        <article>
+          <header><%= header %></header>
+          <p><%= content %></p>
+          <footer><%= footer %></footer>
+        </article>
+      </script>  <!--end post-template -->
+
+      <script id="comments-template" type="text/x-lodash-template">
+        <article>
+          <header><%= header %></header>
+          <p><%= content %></p>
+          <footer><%= footer %></footer>
+        </article>
+      </script>  <!--end comments-template -->
+
+      <script id="comment-template" type="text/x-lodash-template">
+        <article>
+          <header><%= header %></header>
+          <p><%= content %></p>
+          <footer><%= footer %></footer>
+        </article>
+      </script>  <!--end comment-template -->
+
     </main>
     <script src="node_modules/lodash/lodash.min.js"></script>
     <script src="index.js"></script>
